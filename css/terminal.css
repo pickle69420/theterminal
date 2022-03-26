@@ -1,0 +1,111 @@
+*{
+  box-sizing: border-box;
+  touch-action: manipulation;
+  }
+html, body{
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right:0;
+  bottom:0;
+  left:0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#screen {
+    background-color: black;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+#Container,
+#Container>div {
+    -moz-transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    -o-transform: rotate(180deg);
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+}
+
+#wrapper {
+    display: table-cell;
+    vertical-align: bottom;
+    height: 100%;
+ }
+
+.log {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #00e676;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.log > * {
+    margin: 0;
+}
+
+#input {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#input p {
+    color: #00e676;
+    display: inline-block;
+    font-family: 'Source Code Pro', monospace;
+    padding-right: .4em;
+    margin: 0;
+}
+
+#input input {
+    max-width: 85%;
+    display: inline-block;
+}
+
+input[type="command"] {
+    background-color: black;
+    border: 0;
+    color: #00e676;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 16px;
+    outline: 0;
+}
+
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #4a4a4a #000000;
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #000000;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #4a4a4a;
+    border-radius: 0px;
+    border: 0px solid #424242;
+  }
+  *::-moz-selection {
+    background: gray;
+  }
+  
+  *::selection {
+    background: gray;
+  }

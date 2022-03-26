@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-16"/>
+    <link rel="stylesheet" href="./css/terminal.css">
+    <link rel="stylesheet" href="./css/winbox.css">
+    <link rel="icon" href="./img/favicon-32.png">
+    <script src="./js/winbox.js"></script>
+    <title>The Terminal</title>
+</head>
+<body>
+    <div id="screen">
+        <div id="Container">
+            <div id="input">
+                <p id="input_title"></p>
+                <input id="input_source" type="command" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus></input>
+            </div>
+            <div id="logger">
+                <div id="wrapper">
+                    <pre style="color: #00e676; font-family: 'Source Code Pro', monospace; margin: 0;">
+ 
+ > START reg /bat 4.5.78.1927v9 srvjs
+ 
+ ________ _           _________                 _             _ 
+ |__   __| |          |__   __|                (_)           | |
+    | |  | |__   ___     | | ___ _ __ _ __ ___  _ _ __   __ _| |
+    | |  | '_ \ / _ \    | |/ _ \ '__| '_ ` _ \| | '_ \ / _` | |
+    | |  | | | |  __/    | |  __/ |  | | | | | | | | | | (_| | |
+    |_|  |_| |_|\___|    |_|\___|_|  |_| |_| |_|_|_| |_|\__,_|_|  ALPHA v1.0.0 <i>experimental</i>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function openWin(name,file,w,h) {
+            new WinBox({
+                title: name,
+                x: "center",
+                y: "center",
+                url: "./windows/"+file+".html",
+                width: w,
+                height: h,
+            });
+        }
+    </script>
+    <script src="./js/terminal.js"></script>
+    <script src="./js/term.js"></script>
+</body>
+</html>

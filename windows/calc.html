@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/uiterminal.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <title>Calculator</title>
+    <style>
+        .container {
+            max-width: 250px;
+            margin: 10px auto 0 auto;
+        }
+        #display {
+            text-align: right;
+            padding-top: 7px;
+            height: 50px;
+            line-height: 25px;
+            font-size: 25px;
+            max-width: 250px;
+            overflow: scroll;
+            
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        .button {
+            line-height: 50px;
+            text-align: center;
+            font-size: 25px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="uiterminal-full">
+    <div class="container">
+        <h3 style="text-align: center;">Calculator</h3>
+        <div id="display"></div>
+        <div class="buttons">
+            <button class="button">C</button>
+            <button class="button">/</button>
+            <button class="button">*</button>
+            <button class="button">&lt;=</button>
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button class="button">-</button>
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+            <button class="button">+</button>
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+            <button class="button">.</button>
+            <button class="button">(</button>
+            <button class="button">0</button>
+            <button class="button">)</button>
+            <button id="equal" class="button uibg-primary">=</button>
+        </div>
+    </div>
+    </div>
+    <script>
+        let display = document.getElementById('display');
+        let buttons = Array.from(document.getElementsByClassName('button'));
+        buttons.map( button => {
+        button.addEventListener('click', (e) => {
+        switch(e.target.innerText){
+            case 'C':
+                display.innerText = '';
+                break;
+            case '=':
+                try{
+                    display.innerText = Function("return " + display.innerText)();
+                } catch {
+                    display.innerText = "Error"
+                }
+                break;
+            case '<=':
+                if (display.innerText){
+                   display.innerText = display.innerText.slice(0, -1);
+                }
+                break;
+            default:
+                display.innerText += e.target.innerText;
+            }
+            });
+        });
+    </script>
+</body>
+</html>
