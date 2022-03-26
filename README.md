@@ -3,3 +3,5 @@
 ## The Terminal >_
 
 This aims to be something cool ;P
+
+Alt account has the [dev repo](https://github.com/AIV420/theterminal)
